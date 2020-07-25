@@ -35,6 +35,14 @@ h1 {
   text-transform: capitalize;
 }
 
+h2 {
+  width: 100%;
+  font-size: calc(1.5rem + 1vw);
+  margin: 32px 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
 #nav {
   padding: 30px;
   display: flex;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ $route.query.title }}</h1>
+    <h2>{{ $route.query.title }}</h2>
     <img :src="$route.query.url" :alt="$route.query.title" />
   </div>
 </template>
