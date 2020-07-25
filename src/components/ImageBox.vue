@@ -29,7 +29,6 @@ a {
   cursor: pointer;
   width: 100%;
   position: relative;
-  height: 200px;
 
   img {
     width: 100%;
