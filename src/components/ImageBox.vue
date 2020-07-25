@@ -1,6 +1,7 @@
 <template>
   <div class="image-box">
     <img v-bind:src="image.url" v-bind:alt="image.title" />
+    <div>{{ image.title }}</div>
   </div>
 </template>
 
@@ -16,9 +17,34 @@ export default {
 <style lang="scss" scoped>
 .image-box {
   width: 100%;
+  position: relative;
 
   img {
     width: 100%;
+  }
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: rgba(#000, 0.5);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms;
+  }
+
+  &:hover {
+    div {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 </style>

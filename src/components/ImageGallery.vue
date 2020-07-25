@@ -30,6 +30,9 @@ export default {
 
 <style lang="scss" scoped>
 .image-gallery {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 64px;
   padding: 16px 32px;
   display: grid;
   gap: 16px;
