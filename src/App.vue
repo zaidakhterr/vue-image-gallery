@@ -1,21 +1,12 @@
 <template>
   <div id="app">
-    <h1>Image Gallery</h1>
-    <image-gallery />
-    <small>Look at all those beauiful images.</small>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
-
-<script>
-import ImageGallery from "./components/ImageGallery";
-
-export default {
-  name: "App",
-  components: {
-    ImageGallery
-  }
-};
-</script>
 
 <style lang="scss">
 *,
@@ -36,17 +27,20 @@ body {
   color: #f1e8ff;
 }
 
-h1 {
-  font-size: calc(2.2rem + 1vw);
-  margin: 32px 0;
-  text-align: center;
-  text-transform: capitalize;
-}
+#nav {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-small {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 64px;
+  a {
+    font-weight: bold;
+    color: #756f7e;
+    padding: 0px 8px;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
