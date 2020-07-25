@@ -1,18 +1,18 @@
 <template>
   <div>
     <h1>Image Gallery</h1>
-    <image-gallery />
+    <photo-gallery />
     <small>Look at all those beauiful images.</small>
   </div>
 </template>
 
 <script>
-import ImageGallery from "../components/ImageGallery";
+import PhotoGallery from "../components/PhotoGallery";
 
 export default {
   name: "App",
   components: {
-    ImageGallery
+    PhotoGallery
   }
 };
 </script>
@@ -22,6 +22,6 @@ small {
   display: block;
   width: 100%;
   text-align: center;
-  margin: 64px 0;
+  margin-bottom: 64px;
 }
 </style>

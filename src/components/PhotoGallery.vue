@@ -1,21 +1,25 @@
 <template>
   <div class="image-gallery">
-    <image-box v-for="img in images" v-bind:key="img.id" v-bind:image="img" />
+    <photo-box
+      v-for="photo in photos"
+      v-bind:key="photo.id"
+      v-bind:photo="photo"
+    />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import ImageBox from "./ImageBox";
+import PhotoBox from "./PhotoBox";
 
 export default {
-  name: "ImageGallery",
+  name: "PhotoGallery",
   components: {
-    ImageBox
+    PhotoBox
   },
   data() {
     return {
-      images: []
+      photos: []
     };
   },
   created() {
@@ -23,7 +27,7 @@ export default {
       .get("https://jsonplaceholder.typicode.com/photos?_limit=112")
       .then(res => {
         console.log(res);
-        this.images = res.data;
+        this.photos = res.data;
       });
   }
 };
@@ -34,7 +38,7 @@ export default {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto 64px;
-  padding: 16px 32px 128px;
+  padding: 16px 32px 64px;
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

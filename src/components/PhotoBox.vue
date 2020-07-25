@@ -2,21 +2,22 @@
   <router-link
     :to="{
       name: 'Photo',
-      params: { id: image.id, title: image.title, url: image.url }
+      params: { id: photo.id },
+      query: { title: photo.title, url: photo.url }
     }"
   >
     <div class="image-box">
-      <img v-bind:src="image.thumbnailUrl" v-bind:alt="image.title" />
-      <div>{{ image.title }}</div>
+      <img v-bind:src="photo.thumbnailUrl" v-bind:alt="photo.title" />
+      <div>{{ photo.title }}</div>
     </div>
   </router-link>
 </template>
 
 <script>
 export default {
-  name: "ImageBox",
+  name: "PhotoBox",
   props: {
-    image: { type: Object, required: true }
+    photo: { type: Object, required: true }
   }
 };
 </script>

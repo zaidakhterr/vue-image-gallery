@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>{{ $route.params.title }}</h1>
-    <img :src="$route.params.url" :alt="$route.params.title" />
+    <h1>{{ $route.query.title }}</h1>
+    <img :src="$route.query.url" :alt="$route.query.title" />
   </div>
 </template>
 
