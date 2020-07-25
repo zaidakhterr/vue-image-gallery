@@ -1,7 +1,7 @@
 <template>
   <div class="image-box">
-    <img v-bind:src="image.url" v-bind:alt="image.title" />
-    <div>{{ image.title }}</div>
+    <img v-bind:src="image.download_url" v-bind:alt="image.author" />
+    <div>{{ image.author }}</div>
   </div>
 </template>
 
@@ -18,9 +18,13 @@ export default {
 .image-box {
   width: 100%;
   position: relative;
+  height: 200px;
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   div {
