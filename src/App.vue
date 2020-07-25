@@ -1,12 +1,18 @@
 <template>
   <div id="app">
     <h1>Image Gallery</h1>
+    <image-gallery />
   </div>
 </template>
 
 <script>
+import ImageGallery from "./components/ImageGallery";
+
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    ImageGallery
+  }
 };
 </script>
 
