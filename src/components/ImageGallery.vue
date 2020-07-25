@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="image-gallery">
     <image-box v-for="img in images" v-bind:key="img.id" v-bind:image="img" />
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   created() {
     axios
-      .get("https://jsonplaceholder.typicode.com/photos?_limit=16")
+      .get("https://jsonplaceholder.typicode.com/photos?_limit=112")
       .then(res => {
         this.images = res.data;
       });
@@ -28,4 +28,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.image-gallery {
+  padding: 16px 32px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+</style>
