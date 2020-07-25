@@ -1,14 +1,18 @@
 <template>
   <div>
-    <div v-for="image in images" v-bind:key="image.id">{{ image.title }}</div>
+    <image-box v-for="img in images" v-bind:key="img.id" v-bind:image="img" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import ImageBox from "./ImageBox";
 
 export default {
   name: "ImageGallery",
+  components: {
+    ImageBox
+  },
   data() {
     return {
       images: []
