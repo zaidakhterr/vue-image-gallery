@@ -30,6 +30,6 @@ small {
   display: block;
   width: 100%;
   text-align: center;
-  margin-bottom: 64px;
+  margin: 64px 0;
 }
 </style>

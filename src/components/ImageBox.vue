@@ -1,8 +1,15 @@
 <template>
-  <div class="image-box">
-    <img v-bind:src="image.download_url" v-bind:alt="image.author" />
-    <div>{{ image.author }}</div>
-  </div>
+  <router-link
+    :to="{
+      name: 'Photo',
+      params: { id: image.id, title: image.title, url: image.url }
+    }"
+  >
+    <div class="image-box">
+      <img v-bind:src="image.thumbnailUrl" v-bind:alt="image.title" />
+      <div>{{ image.title }}</div>
+    </div>
+  </router-link>
 </template>
 
 <script>
@@ -15,7 +22,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  color: #fff;
+}
 .image-box {
+  cursor: pointer;
   width: 100%;
   position: relative;
   height: 200px;

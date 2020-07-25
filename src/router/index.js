@@ -14,11 +14,16 @@ const routes = [
     name: "About",
     component: () => import("../views/About.vue"),
   },
+  {
+    path: "/photo/:id",
+    name: "Photo",
+    component: () => import("../views/Photo.vue"),
+  },
 ];
 
 const router = new VueRouter({
   routes,
-  mode: "history",
+  mode: "hash",
 });
 
 export default router;
